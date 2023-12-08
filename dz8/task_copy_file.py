@@ -79,16 +79,9 @@ def write_file(file_name, lst):
 def copy_file_row(file_name, a, new_file):
     stroka = []
     info = read_file(file_name)
-    # b = info[a]
-    # print(b)
     res = list(info[a].values())
     obj = {"Имя": res[0], "Фамилия": res[1], "Телефон": res[2]}
     stroka.append(obj)
-    #print(res)
-    #obj = {"Имя": res[0], "Фамилия": res[1], "Телефон": res[2]}
-    # print(obj)
-    # res.append(obj)
-    # print(res)
     with open(new_file, "w", encoding='utf-8', newline='') as data:
         f_writer = DictWriter(data, fieldnames=['Имя', 'Фамилия', 'Телефон'])
         f_writer.writeheader()
